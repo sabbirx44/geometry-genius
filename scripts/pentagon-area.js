@@ -1,9 +1,22 @@
+// Get input elements
+const pentagonPerimeterInput = document.getElementById('pentagon-perimeter');
+const pentagonApothemInput = document.getElementById('pentagon-apothem');
+const pentagonAreaOutput = document.getElementById('pentagon-area');
+
+// Add event listener to the button
+document.getElementById('calculatePentagonArea').addEventListener('click', calculatePentagonArea);
+
+// Function to calculate the area of a pentagon
 function calculatePentagonArea() {
-    const pentagonPerimeter = getInputValueById('pentagon-perimeter');
-    const pentagonApothem = getInputValueById('pentagon-apothem');
+  const perimeter = parseFloat(pentagonPerimeterInput.value);
+  const apothem = parseFloat(pentagonApothemInput.value);
 
-    const pentagonArea = 0.5 * pentagonPerimeter * pentagonApothem;
-    console.log(pentagonArea);
+  // Check if the input values are valid
+  if (isNaN(perimeter) || isNaN(apothem) || perimeter <= 0 || apothem <= 0) {
+    pentagonAreaOutput.textContent = 'Please enter valid perimeter and apothem values.';
+    return;
+  }
 
-    setInnerTextByID('pentagon-area', pentagonArea);
+  const area = 0.5 * perimeter * apothem;
+  pentagonAreaOutput.textContent = area.toFixed(2); // Round to two decimal places
 }

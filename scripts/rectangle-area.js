@@ -1,17 +1,21 @@
-function calculateRectangleArea() {
-    const rectangleWidth = document.getElementById('rectangle-width');
-    const rectangleWidthValue = rectangleWidth.value;
-    const width = parseFloat(rectangleWidthValue);
-    console.log(width);
+function calculateRectangle() {
+    // base
+    const rectangleBaseInput = document.getElementById('rectangle-base');
+    const rectangleBaseValue = rectangleBaseInput.value;
+    const base = parseFloat(rectangleBaseValue);
+    console.log(base);
 
-    const rectangleLength = document.getElementById('rectangle-length');
-    const rectangleLengthValue = rectangleLength.value;
-    const height = parseFloat(rectangleLengthValue);
+    // height
+    const rectangleHeightInput = document.getElementById('rectangle-height');
+    const rectangleHeightValue = rectangleHeightInput.value;
+    const height = parseFloat(rectangleHeightValue);
     console.log(height);
 
-    const rectangleArea = width * height;
-    console.log('Area of rectangle is: ', rectangleArea);
+    // Area calculation
+    const rectangleArea = base * height;
+    console.log('The are of the rectangle is: ', rectangleArea);
 
+    // Display Area
     const rectangleAreaSpan = document.getElementById('rectangle-area');
     rectangleAreaSpan.innerText = rectangleArea;
 }
